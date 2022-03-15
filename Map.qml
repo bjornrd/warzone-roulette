@@ -1,10 +1,10 @@
 import QtQuick 2.0
 
 Item {
-    id: caldera_map
-    property alias grid: caldera_grid
+    property alias grid_x_coordinates: grid.x_coordinates
+    property alias grid_y_coordinates: grid.y_coordinates
 
-    Grid {
-        id: caldera_grid
+    MapGrid {
+        id: grid
     }
 }

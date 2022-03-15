@@ -3,9 +3,19 @@ QT += quick virtualkeyboard
 SOURCES += \
         main.cpp
 
-resources.files = main.qml Grid.qml Map.qml RouletteResultView.qml RouletteView.qml
+resources.files =\
+                qtquickcontrols2.conf \
+                main.qml \
+                Coordinate.qml \
+                MapGrid.qml \
+                Map.qml \
+                RouletteResultView.qml \
+                RouletteView.qml \
+                RouletteController.qml
+
 resources.prefix = /$${TARGET}
-RESOURCES += resources
+RESOURCES += resources \
+    resources.qrc
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
@@ -20,7 +30,9 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 DISTFILES += \
     Coordinate.qml \
-    Grid.qml \
     Map.qml \
+    MapGrid.qml \
+    RouletteController.qml \
     RouletteResultView.qml \
-    RouletteView.qml
+    RouletteView.qml \
+    qtquickcontrols2.conf
