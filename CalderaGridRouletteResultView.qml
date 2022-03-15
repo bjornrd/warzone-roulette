@@ -1,10 +1,11 @@
 import QtQuick 2.0
+import QtQuick.Controls.Material 2.15
 
 Item {
     property string x_coordinate: "A"
     property string y_coordinate: "1"
 
-    property int font_pointSize: 64
+    property int font_pointSize: 42
 
     Item {
         width: parent.width
@@ -19,6 +20,7 @@ Item {
             x: parent.width/2 - (width + y_coordinate_text.width + y_coordinate_text.anchors.leftMargin)/2
             y: parent.height/2
 
+            color: Material.foreground
         }
 
         Text {
@@ -30,6 +32,8 @@ Item {
             anchors.left: x_coordinate_text.right
             anchors.leftMargin: 30
             anchors.top: x_coordinate_text.top
+
+            color: Material.foreground
         }
     }
 }

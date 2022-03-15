@@ -12,10 +12,14 @@ Item {
         width: parent.width
         height: parent.height/2
 
-
         text: "Roll"
         font.bold: true
         font.pointSize: 48
+
+        background: Rectangle {
+            anchors.fill: parent
+            color: roll_button.down ? Qt.lighter(Material.primary, 1.5) : Qt.lighter(Material.primary, 2)
+        }
 
         onClicked: {
             doRoll()

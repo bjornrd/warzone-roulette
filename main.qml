@@ -9,11 +9,12 @@ ApplicationWindow {
     title: "Warzone Roulette"
 
     header: Text {
-        text: "Warzone Roulette"
+        text: "Warzone Roulette\n Roll for drop-spot"
         horizontalAlignment:  Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         font.bold: true
         font.pointSize: 32
+        color: Material.foreground
     }
 
     footer: TabBar {
@@ -21,7 +22,7 @@ ApplicationWindow {
 
         TabButton {
             id: caldera_grid_menu_button
-            text: "Caldera Grid"
+            text: "Grid"
 
             onClicked: {
                 stack.clear()
