@@ -8,49 +8,70 @@ ApplicationWindow {
     visible: true
     title: "Warzone Roulette"
 
-    // Caldera grid
-    // Caldera names
-    // Rebirth names
+    header: Text {
+        text: "Warzone Roulette"
+        horizontalAlignment:  Text.AlignHCenter
+        verticalAlignment: Text.AlignVCenter
+        font.bold: true
+        font.pointSize: 32
+    }
 
-    header: ToolBar {
-        Button {
+    footer: TabBar {
+        width: parent.width
+
+        TabButton {
             id: caldera_grid_menu_button
             text: "Caldera Grid"
-            width: parent.width/3
-            height: parent.height
+
+            onClicked: {
+                stack.clear()
+                stack.push(caldera_grid_roulette_view)
+            }
         }
 
-        Button {
+        TabButton {
             id: caldera_menu_button
             text: "Caldera"
-            width: parent.width/3
-            height: parent.height
-            anchors.left: caldera_grid_menu_button.right
+
+            onClicked: {
+                stack.clear()
+                stack.push(caldera_roulette_view)
+            }
         }
 
-        Button {
+        TabButton {
             id: rebirth_menu_button
             text: "Rebirth"
-            width: parent.width/3
-            height: parent.height
-            anchors.left: caldera_menu_button.right
+
+            onClicked: {
+                stack.clear()
+                stack.push(rebirth_roulette_view)
+            }
         }
     }
+
 
     StackView {
         id: stack
-        initialItem: roulette_view
         anchors.fill: parent
-
     }
 
-
-    RouletteView {
-        id: roulette_view
-//        anchors.fill: parent
-//        width: parent.width
-//        height: parent.height
+    CalderaGridRouletteView {
+        id: caldera_grid_roulette_view
+        visible: false
     }
 
+    CalderaRouletteView {
+        id: caldera_roulette_view
+        visible: false
+    }
 
+    RebirthRouletteView {
+        id: rebirth_roulette_view
+        visible: false
+    }
+
+    Component.onCompleted: {
+        stack.push(caldera_grid_roulette_view)
+    }
 }

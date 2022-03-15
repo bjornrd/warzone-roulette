@@ -9,9 +9,17 @@ resources.files =\
                 Coordinate.qml \
                 MapGrid.qml \
                 Map.qml \
-                RouletteResultView.qml \
-                RouletteView.qml \
-                RouletteController.qml
+                CalderaGridRouletteResultView.qml \
+                CalderaGridRouletteView.qml \
+                CalderaGridRouletteController.qml \
+                CalderaZones.qml \
+                CalderaRouletteResultView.qml \
+                CalderaRouletteController.qml \
+                CalderaRouletteView.qml \
+                RebirthZones.qml \
+                RebirthRouletteResultView.qml \
+                RebirthRouletteController.qml \
+                RebirthRouletteView.qml
 
 resources.prefix = /$${TARGET}
 RESOURCES += resources \
@@ -29,10 +37,18 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
+    CalderaGridRouletteController.qml \
+    CalderaGridRouletteResultView.qml \
+    CalderaGridRouletteView.qml \
+    CalderaRouletteController.qml \
+    CalderaRouletteResultView.qml \
+    CalderaRouletteView.qml \
+    CalderaZones.qml \
     Coordinate.qml \
     Map.qml \
     MapGrid.qml \
-    RouletteController.qml \
-    RouletteResultView.qml \
-    RouletteView.qml \
+    RebirthRouletteController.qml \
+    RebirthRouletteResultView.qml \
+    RebirthRouletteView.qml \
+    RebirthZones.qml \
     qtquickcontrols2.conf

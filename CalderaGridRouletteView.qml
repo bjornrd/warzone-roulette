@@ -7,7 +7,7 @@ Item {
         id: caldera
     }
 
-    RouletteResultView {
+    CalderaGridRouletteResultView {
         id: roulette_result_view
         width: parent.width
         height: parent.height/2
@@ -19,7 +19,7 @@ Item {
         y_coordinate: caldera.grid_y_coordinates[roulette_controller.y_coordinate_value]
     }
 
-    RouletteController {
+    CalderaGridRouletteController {
         id: roulette_controller
         width: parent.width
         height: parent.height/2
