@@ -9,9 +9,9 @@ Item {
     QtObject {
         id: internal
         property int num_rolls: 0
-        property int max_rolls: 16
+        property int max_rolls: 21
 
-        property int roll_timer_base_interval: 75
+        property int roll_timer_base_interval: 35
         property int roll_timer_interval_incr: 10
     }
 
@@ -23,12 +23,19 @@ Item {
         height: parent.height/2
 
         text: "Roll"
-        font.bold: true
-        font.pointSize: 48
+        font.pointSize: 64
+
+        contentItem: Text {
+            text: roll_button.text
+            verticalAlignment: Text.AlignVCenter
+            horizontalAlignment: Text.AlignHCenter
+            font: roll_button.font
+            color: roll_button.down ? "Yellow" : Material.foreground
+        }
 
         background: Rectangle {
             anchors.fill: parent
-            color: roll_button.down ? Qt.lighter(Material.primary, 1.5) : Qt.lighter(Material.primary, 2)
+            color: Material.background
         }
 
         onClicked: {
