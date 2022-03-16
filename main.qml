@@ -15,20 +15,11 @@ ApplicationWindow {
         verticalAlignment: Text.AlignVCenter
         font.pointSize: 32
         color: Material.foreground        
-    }        
+    }
 
     footer: TabBar {
+        id: tab_bar
         width: parent.width
-
-        TabButton {
-            id: caldera_grid_menu_button
-            text: "Grid"
-
-            onClicked: {
-                stack.clear()
-                stack.push(caldera_grid_roulette_view)
-            }
-        }
 
         TabButton {
             id: caldera_menu_button
@@ -47,6 +38,16 @@ ApplicationWindow {
             onClicked: {
                 stack.clear()
                 stack.push(rebirth_roulette_view)
+            }
+        }
+
+        TabButton {
+            id: caldera_grid_menu_button
+            text: "Grid"
+
+            onClicked: {
+                stack.clear()
+                stack.push(caldera_grid_roulette_view)
             }
         }
     }
@@ -72,7 +73,5 @@ ApplicationWindow {
         visible: false
     }
 
-    Component.onCompleted: {
-        stack.push(caldera_grid_roulette_view)
-    }
+    Component.onCompleted: stack.push(caldera_roulette_view)
 }
