@@ -9,13 +9,13 @@ ApplicationWindow {
     title: "Warzone Roulette"
 
     header: Text {
-        text: "Warzone Roulette\n Roll for drop-spot"
+        text: "<p><u><b>Warzone Roulette</b></u></p>
+               <p>Roll for drop-spot</p>"
         horizontalAlignment:  Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
-        font.bold: true
         font.pointSize: 32
-        color: Material.foreground
-    }
+        color: Material.foreground        
+    }        
 
     footer: TabBar {
         width: parent.width
