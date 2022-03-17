@@ -115,11 +115,10 @@ ApplicationWindow {
 
             Text {
                 text: " <font color=\'#e3bf15\'><b>Written by:</b></font> <br>
-                        Bjørn Rudi Dahl <br>
-                        bjorn.rudi.dahl@outlook.com <br>
+                        Yup <br>
                         <br>
                         <font color=\'#e3bf15\'><b>For:</b></font> <br>
-                        Dataspill Bonanza - 2022<br>
+                        <i>Dataspill Bonanza</i><br>
                         <br>
                         <br>
                         <a href=\"https://github.com/bjornrd/warzone-roulette.git\"><b>Github repository</b></a> <br>
