@@ -104,7 +104,7 @@ ApplicationWindow {
 
     Drawer {
         id: drawer
-        width: 0.6 * window.width
+        width: 0.67 * window.width
         height: window.height
         interactive: swipe_view.currentIndex === 0 ? true : false
         dragMargin: 40
@@ -114,21 +114,25 @@ ApplicationWindow {
             color: Qt.lighter(Material.primary, 3)
 
             Text {
-                text: " <b>Written by:</b> <br>
+                text: " <font color=\'#e3bf15\'><b>Written by:</b></font> <br>
                         Bjørn Rudi Dahl <br>
                         bjorn.rudi.dahl@outlook.com <br>
                         <br>
-                        <b>For:</b> <br>
-                        Dataspill Bonanza <br>
+                        <font color=\'#e3bf15\'><b>For:</b></font> <br>
+                        Dataspill Bonanza - 2022<br>
                         <br>
-                        2022"
+                        <br>
+                        <a href=\"https://github.com/bjornrd/warzone-roulette.git\"><b>Github repository</b></a>
+                        "
                 font.pointSize: 16
                 anchors.fill: parent
                 anchors.leftMargin: 20
                 anchors.topMargin: 40
                 horizontalAlignment:  Text.AlignLeft
                 verticalAlignment: Text.AlignTop
-                color: Material.accent
+                color: Material.foreground
+
+                onLinkActivated: link => Qt.openUrlExternally(link)
             }
         }
 
