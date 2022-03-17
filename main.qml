@@ -10,9 +10,7 @@ ApplicationWindow {
 
     header: Text {
         text: " <br>
-                <font color=\'#e3bf15\'><u><b> Warzone Roulette </b></u></font>
-                <br>
-                <i>Roll</i> &nbsp; for drop-spot
+                <font color=\'#afb3b3\'><u><b> Warzone Roulette </b></u></font>
               "
         horizontalAlignment:  Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
