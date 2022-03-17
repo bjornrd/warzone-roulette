@@ -9,8 +9,11 @@ ApplicationWindow {
     title: "Warzone Roulette"
 
     header: Text {
-        text: "<br><p><u><b>Warzone Roulette</b></u><br>
-               <i>Roll</i> &nbsp; for drop-spot</p>"
+        text: " <br>
+                <font color=\'#e3bf15\'><u><b> Warzone Roulette </b></u></font>
+                <br>
+                <i>Roll</i> &nbsp; for drop-spot
+              "
         horizontalAlignment:  Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         font.pointSize: 32
@@ -33,7 +36,7 @@ ApplicationWindow {
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignHCenter
                 font: caldera_menu_button.font
-                color: caldera_menu_button.checked ? "yellow" : Material.foreground
+                color: caldera_menu_button.checked ? Material.accent : Material.foreground
             }
 
             onClicked: {
@@ -51,7 +54,7 @@ ApplicationWindow {
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignHCenter
                 font: rebirth_menu_button.font
-                color: rebirth_menu_button.checked ? "yellow" : Material.foreground
+                color: rebirth_menu_button.checked ? Material.accent : Material.foreground
             }
 
             onClicked: {
@@ -62,14 +65,14 @@ ApplicationWindow {
         TabButton {
             id: caldera_grid_menu_button
             text: "Grid"
-            hoverEnabled: false
+            hoverEnabled: false            
 
             contentItem: Text {
                 text: caldera_grid_menu_button.text
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignHCenter
                 font: caldera_grid_menu_button.font
-                color: caldera_grid_menu_button.checked ? "yellow" : Material.foreground
+                color: caldera_grid_menu_button.checked ? Material.accent : Material.foreground
             }
 
             onClicked: {
@@ -93,7 +96,7 @@ ApplicationWindow {
 
         CalderaGridRouletteView {
             id: caldera_grid_roulette_view
+
         }
     }
-
 }

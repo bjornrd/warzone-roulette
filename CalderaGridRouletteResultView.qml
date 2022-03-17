@@ -20,7 +20,7 @@ Item {
             x: parent.width/2 - (width + y_coordinate_text.width + y_coordinate_text.anchors.leftMargin)/2
             y: parent.height/2
 
-            color: Material.foreground
+            color: Material.accent
         }
 
         Text {
@@ -33,7 +33,7 @@ Item {
             anchors.leftMargin: 30
             anchors.top: x_coordinate_text.top
 
-            color: Material.foreground
+            color: Material.accent
         }
     }
 }

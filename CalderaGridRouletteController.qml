@@ -33,7 +33,7 @@ Item {
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             font: roll_button.font
-            color: roll_button.down ? "Yellow" : Material.foreground
+            color: roll_button.down ? Material.accent : Material.foreground
         }
 
         background: Rectangle {
