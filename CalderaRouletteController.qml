@@ -24,6 +24,7 @@ Item {
 
         text: "Roll"
         font.pointSize: 64
+        font.capitalization: Qt.platform.os === "ios" ? Font.Capitalize : Font.AllUppercase
 
         contentItem: Text {
             text: roll_button.text
