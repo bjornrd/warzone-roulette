@@ -1,6 +1,6 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.15
-import QtQuick.Controls.Material 2.15
+
 
 ApplicationWindow {
     id: window
@@ -122,7 +122,13 @@ ApplicationWindow {
                         Dataspill Bonanza - 2022<br>
                         <br>
                         <br>
-                        <a href=\"https://github.com/bjornrd/warzone-roulette.git\"><b>Github repository</b></a>
+                        <a href=\"https://github.com/bjornrd/warzone-roulette.git\"><b>Github repository</b></a> <br>
+                        <br>
+                        <br>
+                        Built using Qt Creator 6.0.2 <br>
+                        Based on Qt 6.2.2 <br>
+                        (Clang 12.0 (Apple), 64 bit) <br>
+                        From revision: <a href=\"https://code.qt.io/cgit/qt-creator/qt-creator.git/log/?id=f884ff2160ed5b3c44663d70e1c6915aff4b8ac0\"> f884ff2160 </a>
                         "
                 font.pointSize: 16
                 anchors.fill: parent
