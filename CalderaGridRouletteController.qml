@@ -8,45 +8,24 @@ Item {
     property int x_coordinate_value: 0
     property int y_coordinate_value: 0
 
-    QtObject {
-        id: internal
+    RouletteBehaviour {
+        id: roulette_behaviour
         property int num_x_rolls: 0
         property int num_y_rolls: 0
-        property int max_rolls: 21
-
-        property int roll_timer_base_interval: 35
-        property int roll_timer_interval_incr: 10
     }
 
-    Button {
+    RollButton {
         id: roll_button
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
         width: parent.width
         height: parent.height/2
 
-        text: "Roll"
-        font.pointSize: 64
-        font.capitalization: Qt.platform.os === "ios" ? Font.Capitalize : Font.AllUppercase
-
-        contentItem: Text {
-            text: roll_button.text
-            verticalAlignment: Text.AlignVCenter
-            horizontalAlignment: Text.AlignHCenter
-            font: roll_button.font
-            color: roll_button.down ? Material.accent : Material.foreground
-        }
-
-        background: Rectangle {
-            anchors.fill: parent
-            color: Material.background
-        }
-
         onClicked: {
-            internal.num_x_rolls = 0
-            internal.num_y_rolls = 0
-            x_roll_timer.interval = internal.roll_timer_base_interval
-            y_roll_timer.interval = internal.roll_timer_base_interval
+            roulette_behaviour.num_x_rolls = 0
+            roulette_behaviour.num_y_rolls = 0
+            x_roll_timer.interval = roulette_behaviour.roll_timer_base_interval
+            y_roll_timer.interval = roulette_behaviour.roll_timer_base_interval
 
             x_roll_timer.start()
             y_roll_timer.start()
@@ -55,16 +34,16 @@ Item {
 
     Timer {
         id: x_roll_timer
-        interval: internal.roll_timer_base_interval
-        repeat: internal.num_x_rolls < internal.max_rolls
+        interval: roulette_behaviour.roll_timer_base_interval
+        repeat: roulette_behaviour.num_x_rolls < roulette_behaviour.max_rolls
 
         onTriggered: doXRoll()
     }
 
     Timer {
         id: y_roll_timer
-        interval: internal.roll_timer_base_interval
-        repeat: internal.num_y_rolls < internal.max_rolls
+        interval: roulette_behaviour.roll_timer_base_interval
+        repeat: roulette_behaviour.num_y_rolls < roulette_behaviour.max_rolls
 
         onTriggered: doYRoll()
     }
@@ -82,8 +61,8 @@ Item {
 
         root.x_coordinate_value = new_x_coordinate_value
 
-        internal.num_x_rolls += 1
-        x_roll_timer.interval = internal.roll_timer_base_interval + internal.num_x_rolls*internal.roll_timer_interval_incr
+        roulette_behaviour.num_x_rolls += 1
+        x_roll_timer.interval = roulette_behaviour.roll_timer_base_interval + roulette_behaviour.num_x_rolls*roulette_behaviour.roll_timer_interval_incr
     }
 
     function doYRoll()
@@ -98,7 +77,7 @@ Item {
 
         root.y_coordinate_value = new_y_coordinate_value
 
-        internal.num_y_rolls += 1
-        y_roll_timer.interval = internal.roll_timer_base_interval + internal.num_y_rolls*internal.roll_timer_interval_incr
+        roulette_behaviour.num_y_rolls += 1
+        y_roll_timer.interval = roulette_behaviour.roll_timer_base_interval + roulette_behaviour.num_y_rolls*roulette_behaviour.roll_timer_interval_incr
     }
 }

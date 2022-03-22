@@ -19,7 +19,9 @@ resources.files =\
                 RebirthZones.qml \
                 RebirthRouletteResultView.qml \
                 RebirthRouletteController.qml \
-                RebirthRouletteView.qml
+                RebirthRouletteView.qml \
+                RollButton.qml \
+                RouletteBehaviour.qml
 
 resources.prefix = /$${TARGET}
 RESOURCES += resources \
@@ -51,4 +53,6 @@ DISTFILES += \
     RebirthRouletteResultView.qml \
     RebirthRouletteView.qml \
     RebirthZones.qml \
+    RollButton.qml \
+    RouletteBehaviour.qml \
     qtquickcontrols2.conf
