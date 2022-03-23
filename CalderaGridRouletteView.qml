@@ -5,7 +5,7 @@ Item {
     id: root
 
     Map {
-        id: caldera
+        id: map
     }
 
     CalderaGridRouletteResultView {
@@ -16,10 +16,8 @@ Item {
         anchors.top: parent.top
         anchors.left: parent.left
 
-        x_coordinate: caldera.grid_x_coordinates[roulette_controller.x_coordinate_value]
-        y_coordinate: caldera.grid_y_coordinates[roulette_controller.y_coordinate_value]
-
-
+        x_coordinate: map.grid_coordinates[roulette_controller.x_coordinate_value][0]
+        y_coordinate: map.grid_coordinates[roulette_controller.x_coordinate_final_value][1][roulette_controller.y_coordinate_value]
     }
 
     CalderaGridRouletteController {
@@ -30,9 +28,7 @@ Item {
         anchors.top: roulette_result_view.bottom
         anchors.left: parent.left
 
-        onStateChanged: {
-
-        }
+        map_grid: map.grid_coordinates
     }
 
     GridMapSelector {
@@ -48,8 +44,8 @@ Item {
         shape_fill_color: Qt.lighter(Material.primary, 5)
         shape_stroke_color: Material.primary
 
-        onUseCalderaGridSignal: {roulette_controller.state = "caldera"}
-        onUseRebirthGridSignal: {roulette_controller.state = "rebirth"}
+        onUseCalderaGridSignal: {map.state = "caldera"}
+        onUseRebirthGridSignal: {map.state = "rebirth"}
 
     }
 }
