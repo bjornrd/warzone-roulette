@@ -46,8 +46,6 @@ Item {
                 x: ml.x + root.section_width/2
                 y: ml.y + 50
             }
-
-
         }
     }
 

@@ -38,11 +38,11 @@ Item {
         anchors.fill: parent
 
         // TODO: I'd like the vertical center of this component to be centered on the screen, not relative to the component
-        y_start: parent.height*3/10
-        y_end: parent.height*6/10
+        y_start: parent.height*2/10
+        y_end: parent.height*5/10
 
-        shape_fill_color: Qt.lighter(Material.primary, 5)
-        shape_stroke_color: Material.primary
+        shape_fill_color: Qt.lighter(Material.primary, 3)
+        shape_stroke_color: Material.accent
 
         onUseCalderaGridSignal: {map.state = "caldera"}
         onUseRebirthGridSignal: {map.state = "rebirth"}
