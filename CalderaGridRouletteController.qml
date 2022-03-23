@@ -8,6 +8,35 @@ Item {
     property int x_coordinate_value: 0
     property int y_coordinate_value: 0
 
+    state: "caldera"
+    onStateChanged: {console.log(state)}
+
+    QtObject {
+        id: internal
+        property int x_roll_max: 10
+        property int y_roll_max: 9
+    }
+
+    states: [
+        State {
+            name: "caldera"
+            PropertyChanges {
+                target: internal
+                x_roll_max: 10
+                y_roll_max: 9
+            }
+        },
+
+        State {
+            name: "rebirth"
+            PropertyChanges {
+                target: internal
+                x_roll_max: 10
+                y_roll_max: 9
+            }
+        }
+    ]
+
     RouletteBehaviour {
         id: roulette_behaviour
         property int num_x_rolls: 0
@@ -51,11 +80,11 @@ Item {
 
     function doXRoll()
     {
-        var new_x_coordinate_value = Math.floor(Math.random()*10)
+        var new_x_coordinate_value = Math.floor(Math.random()*internal.x_roll_max)
         if(new_x_coordinate_value === root.x_coordinate_value)
         {
             while(new_x_coordinate_value === root.x_coordinate_value){
-                new_x_coordinate_value = Math.floor(Math.random()*10)
+                new_x_coordinate_value = Math.floor(Math.random()*internal.x_roll_max)
             }
         }
 
@@ -67,11 +96,11 @@ Item {
 
     function doYRoll()
     {
-        var new_y_coordinate_value = Math.floor(Math.random()*9)
+        var new_y_coordinate_value = Math.floor(Math.random()*internal.y_roll_max)
         if(new_y_coordinate_value === root.y_coordinate_value)
         {
             while(new_y_coordinate_value === root.y_coordinate_value){
-                new_y_coordinate_value = Math.floor(Math.random()*9)
+                new_y_coordinate_value = Math.floor(Math.random()*internal.y_roll_max)
             }
         }
 

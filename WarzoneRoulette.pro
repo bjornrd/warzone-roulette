@@ -21,7 +21,8 @@ resources.files =\
                 RebirthRouletteController.qml \
                 RebirthRouletteView.qml \
                 RollButton.qml \
-                RouletteBehaviour.qml
+                RouletteBehaviour.qml \
+                GridMapSelector.qml
 
 resources.prefix = /$${TARGET}
 RESOURCES += resources \
@@ -47,6 +48,7 @@ DISTFILES += \
     CalderaRouletteView.qml \
     CalderaZones.qml \
     Coordinate.qml \
+    GridMapSelector.qml \
     Map.qml \
     MapGrid.qml \
     RebirthRouletteController.qml \

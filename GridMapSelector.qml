@@ -13,11 +13,16 @@ Item {
     property alias shape_fill_color: shape_path.fillColor
     property alias shape_stroke_color: shape_path.strokeColor
 
+    signal useCalderaGridSignal
+    signal useRebirthGridSignal
+
     Shape {
         id: shape
 
-        property alias button_section_start_y: tl.y
-        property alias button_section_end_y: ml.y
+        property alias y_safe_region_start: tl.y
+        property alias y_safe_region_end: ml.y
+        property alias x_safe_region_start: ml.x
+        property alias x_safe_region_end: shape_path.startX
 
         ShapePath {
             id: shape_path
@@ -29,11 +34,13 @@ Item {
                 x: root.width - root.section_width/2
                 y: root.y_start + 50
             }
+
             PathLine {
                 id: ml
                 x: tl.x
                 y: tl.y + section_height
             }
+
             PathLine {
                 id: bl
                 x: ml.x + root.section_width/2
@@ -44,13 +51,82 @@ Item {
         }
     }
 
-//    Button {
-//        id: caldera_button
-//    }
+    Button {
+        id: caldera_button
+        x: shape.x_safe_region_start
+        y: shape.y_safe_region_start + width
+        z: 40
+        width: (shape.y_safe_region_end - shape.y_safe_region_start)/2
+        height:(shape.x_safe_region_end - shape.x_safe_region_start)
 
-//    Button {
-//        id: rebirth_button
-//    }
+        property bool selected: true
+
+        contentItem: Text {
+            text: "Caldera"
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            color: parent.down || caldera_button.selected ? Material.accent : Material.foreground
+            font.bold: true
+            font.pointSize: 16
+        }
+
+        background: Rectangle {
+            anchors.fill: parent
+            color: root.shape_fill_color
+        }
+
+        onClicked: {
+            caldera_button.selected = true
+            rebirth_button.selected = false
+            root.useCalderaGridSignal()
+        }
+
+        transform: Rotation {
+            origin.x: 0
+            origin.y: 0
+            angle: -90
+        }
+    }
+
+    Button {
+        id: rebirth_button
+        x: shape.x_safe_region_start
+        y: shape.y_safe_region_start + 2*width
+        z: 40
+        width: (shape.y_safe_region_end - shape.y_safe_region_start)/2
+        height:(shape.x_safe_region_end - shape.x_safe_region_start)
+
+        property bool selected: false
+
+        contentItem: Text {
+            text: "Rebirth"
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            color: parent.down || rebirth_button.selected ? Material.accent : Material.foreground
+            font.bold: true
+            font.pointSize: 16
+        }
+
+        background: Rectangle {
+            anchors.fill: parent
+            color: root.shape_fill_color
+        }
+
+        onClicked: {
+            caldera_button.selected = false
+            rebirth_button.selected = true
+            root.useRebirthGridSignal()
+        }
+
+        transform: Rotation {
+            origin.x: 0
+            origin.y: 0
+            angle: -90
+        }
+    }
+
+
+    Component.onCompleted: root.useCalderaGridSignal()
 
 
 
