@@ -1,4 +1,4 @@
-# warzone-roulette
+# Warzone Roulette
 
 A little app to randomize the drops in Caldera and Rebirth Island. 
 
