@@ -44,8 +44,8 @@ Item {
         shape_fill_color: Qt.lighter(Material.primary, 3)
         shape_stroke_color: Material.primary
 
-        onUseCalderaGridSignal: {map.state = "caldera"}
-        onUseRebirthGridSignal: {map.state = "rebirth"}
+        onUseCalderaGridSignal: map.state = "caldera"
+        onUseRebirthGridSignal: map.state = "rebirth"
 
     }
 }

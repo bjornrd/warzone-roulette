@@ -131,7 +131,7 @@ ApplicationWindow {
                         Yup <br>
                         <br>
                         <font color=\'#e3bf15\'><b>For:</b></font> <br>
-                        <i>Dataspill Bonanza</i><br>
+                        <i>Dataspill Bonansa</i><br>
                         <br>
                         <br>
                         <a href=\"https://github.com/bjornrd/warzone-roulette.git\"><b>Github repository</b></a> <br>
