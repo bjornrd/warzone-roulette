@@ -1,6 +1,6 @@
 import QtQuick 2.0
 
 Item {
-    property var zones: ["Bioweapons Lab", "Decon Zone", "Shore", "Chemical Eng.", "Control Center", "Prison Block",
-                         "Harbor", "Security Area", "Living Quarters", "Factory", "The Usual"]
+    property var zones: ["Bioweapons Lab", "Decon Zone", "Dock", "Chemical Eng.", "Control Center", "Prison Block",
+                         "Harbor", "Stronghold", "Living Quarters", "Nova 6 Factory", "The Usual"]
 }
