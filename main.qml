@@ -23,10 +23,8 @@ ApplicationWindow {
             height: parent.height
 
             onClicked: {
-                swipe_view.setCurrentIndex(0)
+                drawer.force_open = true
                 drawer.open()
-                drawer.interactive = true
-
             }
         }
     }
@@ -131,8 +129,10 @@ ApplicationWindow {
         id: drawer
         width: 0.67 * window.width
         height: window.height
-        interactive: swipe_view.currentIndex === 0 ? true : false
+        interactive: swipe_view.currentIndex === 0 || force_open ? true : false
         dragMargin: 40
+
+        property bool force_open: false
 
         Rectangle {
             anchors.fill: parent
@@ -165,6 +165,8 @@ ApplicationWindow {
                 onLinkActivated: link => Qt.openUrlExternally(link)
             }
         }
+
+        onClosed: force_open = false
 
 
         Overlay.modal: Rectangle {
