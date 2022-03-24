@@ -67,8 +67,8 @@ Item {
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             color: parent.checked ? Material.accent : Material.foreground
-            font.bold: true
             font.pointSize: 16
+            font.capitalization: Qt.platform.os === "ios" ? Font.Capitalize : Font.AllUppercase
         }
 
         background: Rectangle {
@@ -104,8 +104,8 @@ Item {
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             color: parent.checked ? Material.accent : Material.foreground
-            font.bold: true
             font.pointSize: 16
+            font.capitalization: Qt.platform.os === "ios" ? Font.Capitalize : Font.AllUppercase
         }
 
         background: Rectangle {
