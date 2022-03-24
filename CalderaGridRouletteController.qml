@@ -18,6 +18,10 @@ Item {
         id: roulette_behaviour
         property int num_x_rolls: 0
         property int num_y_rolls: 0
+
+        max_rolls: 11
+        roll_timer_interval_incr: 20
+
     }
 
     RollButton {
