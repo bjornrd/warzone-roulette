@@ -1,6 +1,6 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.15
-
+import QtQuick.Controls.Material 2.0
 
 ApplicationWindow {
     id: window
@@ -39,9 +39,12 @@ ApplicationWindow {
                 color: caldera_menu_button.checked ? Material.accent : Material.foreground
             }
 
+            background: {}  // Ignore default ripple effect
+
             onClicked: {
                 swipe_view.setCurrentIndex(0)
             }
+
         }
 
         TabButton {
@@ -57,6 +60,8 @@ ApplicationWindow {
                 font: rebirth_menu_button.font
                 color: rebirth_menu_button.checked ? Material.accent : Material.foreground
             }
+
+            background: {}  // Ignore default ripple effect
 
             onClicked: {
                 swipe_view.setCurrentIndex(1)
@@ -76,6 +81,8 @@ ApplicationWindow {
                 font: caldera_grid_menu_button.font
                 color: caldera_grid_menu_button.checked ? Material.accent : Material.foreground
             }
+
+            background: {}  // Ignore default ripple effect
 
             onClicked: {
                 swipe_view.setCurrentIndex(2)
