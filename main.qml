@@ -39,7 +39,9 @@ ApplicationWindow {
                 color: caldera_menu_button.checked ? Material.accent : Material.foreground
             }
 
-            background: {}  // Ignore default ripple effect
+            background: Rectangle { // Ignore default ripple effect
+                color: Material.background
+            }
 
             onClicked: {
                 swipe_view.setCurrentIndex(0)
@@ -61,7 +63,9 @@ ApplicationWindow {
                 color: rebirth_menu_button.checked ? Material.accent : Material.foreground
             }
 
-            background: {}  // Ignore default ripple effect
+            background: Rectangle { // Ignore default ripple effect
+                color: Material.background
+            }
 
             onClicked: {
                 swipe_view.setCurrentIndex(1)
@@ -82,7 +86,9 @@ ApplicationWindow {
                 color: caldera_grid_menu_button.checked ? Material.accent : Material.foreground
             }
 
-            background: {}  // Ignore default ripple effect
+            background: Rectangle { // Ignore default ripple effect
+                color: Material.background
+            }
 
             onClicked: {
                 swipe_view.setCurrentIndex(2)
