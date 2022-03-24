@@ -16,7 +16,19 @@ ApplicationWindow {
         horizontalAlignment:  Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         font.pointSize: 32
-        color: Material.foreground        
+        color: Material.foreground
+
+        MouseArea {
+            width: parent.width
+            height: parent.height
+
+            onClicked: {
+                swipe_view.setCurrentIndex(0)
+                drawer.open()
+                drawer.interactive = true
+
+            }
+        }
     }
 
     footer: TabBar {
@@ -153,7 +165,6 @@ ApplicationWindow {
                 onLinkActivated: link => Qt.openUrlExternally(link)
             }
         }
-
 
 
         Overlay.modal: Rectangle {
