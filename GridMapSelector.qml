@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.0
 import QtQuick.Shapes 1.15
+import QtQuick.Controls.Material 2.15
 
 Item {
     id: root
@@ -49,6 +50,7 @@ Item {
         }
     }
 
+
     Button {
         id: caldera_button
         x: shape.x_safe_region_start
@@ -56,14 +58,15 @@ Item {
         z: 40
         width: (shape.y_safe_region_end - shape.y_safe_region_start)/2
         height:(shape.x_safe_region_end - shape.x_safe_region_start)
+        checkable: true
+        checked: true
 
-        property bool selected: true
 
         contentItem: Text {
             text: "Caldera"
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
-            color: parent.down || caldera_button.selected ? Material.accent : Material.foreground
+            color: parent.checked ? Material.accent : Material.foreground
             font.bold: true
             font.pointSize: 16
         }
@@ -74,8 +77,6 @@ Item {
         }
 
         onClicked: {
-            caldera_button.selected = true
-            rebirth_button.selected = false
             root.useCalderaGridSignal()
         }
 
@@ -93,6 +94,8 @@ Item {
         z: 40
         width: (shape.y_safe_region_end - shape.y_safe_region_start)/2
         height:(shape.x_safe_region_end - shape.x_safe_region_start)
+        checkable: true
+        checked: false
 
         property bool selected: false
 
@@ -100,7 +103,7 @@ Item {
             text: "Rebirth"
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
-            color: parent.down || rebirth_button.selected ? Material.accent : Material.foreground
+            color: parent.checked ? Material.accent : Material.foreground
             font.bold: true
             font.pointSize: 16
         }
@@ -111,8 +114,6 @@ Item {
         }
 
         onClicked: {
-            caldera_button.selected = false
-            rebirth_button.selected = true
             root.useRebirthGridSignal()
         }
 
@@ -121,6 +122,10 @@ Item {
             origin.y: 0
             angle: -90
         }
+    }
+
+    ButtonGroup {
+        buttons: [caldera_button, rebirth_button]
     }
 
 
