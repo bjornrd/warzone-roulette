@@ -41,8 +41,8 @@ Item {
         y_start: parent.height*2/10
         y_end: parent.height*5/10
 
-        shape_fill_color: Qt.lighter(Material.primary, 3)
-        shape_stroke_color: Material.primary
+        shape_fill_color: Material.background
+        shape_stroke_color: Material.background
 
         onUseCalderaGridSignal: map.state = "caldera"
         onUseRebirthGridSignal: map.state = "rebirth"
