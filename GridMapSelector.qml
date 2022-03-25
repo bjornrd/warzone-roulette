@@ -97,7 +97,6 @@ Item {
         checkable: true
         checked: false
 
-        property bool selected: false
 
         contentItem: Text {
             text: "Rebirth"
