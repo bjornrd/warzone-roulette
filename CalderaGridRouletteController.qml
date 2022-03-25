@@ -91,11 +91,11 @@ Item {
 
     function doXRoll()
     {
-        var new_x_coordinate_value = Math.ceil(Math.random()*root.x_roll_max) - 1
+        var new_x_coordinate_value = Math.floor(Math.random()*root.x_roll_max)
         if(new_x_coordinate_value === root.x_coordinate_value)
         {
             while(new_x_coordinate_value === root.x_coordinate_value){
-                new_x_coordinate_value = Math.ceil(Math.random()*root.x_roll_max) - 1
+                new_x_coordinate_value = Math.floor(Math.random()*root.x_roll_max)
             }
         }
 
@@ -111,11 +111,11 @@ Item {
         {
             root.y_coordinate_value = 0
         } else {
-            var new_y_coordinate_value = Math.ceil(Math.random()*root.y_roll_max) - 1
+            var new_y_coordinate_value = Math.floor(Math.random()*root.y_roll_max)
             if(new_y_coordinate_value === root.y_coordinate_value)
             {
                 while(new_y_coordinate_value === root.y_coordinate_value){
-                    new_y_coordinate_value = Math.ceil(Math.random()*root.y_roll_max) - 1
+                    new_y_coordinate_value = Math.floor(Math.random()*root.y_roll_max)
                 }
             }
 
