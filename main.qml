@@ -1,6 +1,6 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.15
-import QtQuick.Controls.Material 2.0
+import QtQuick.Controls.Material 2.15
 
 ApplicationWindow {
     id: window
@@ -9,25 +9,40 @@ ApplicationWindow {
     visible: true
     title: "Warzone Roulette"
 
-    header: Text {
-        text: " <br>
-                <font color=\'#afb3b3\'><u><b> Warzone Roulette </b></u></font>
-              "
-        horizontalAlignment:  Text.AlignHCenter
-        verticalAlignment: Text.AlignVCenter
-        font.pointSize: 32
-        color: Material.foreground
 
-        MouseArea {
-            width: parent.width
-            height: parent.height
 
-            onClicked: {
-                drawer.force_open = true
-                drawer.open()
-            }
+    header: Button {
+        id: about_button
+        text: "About"
+        anchors.right: parent.right
+        anchors.rightMargin: 20
+        width: 60
+        topPadding: 20
+        checkable: true
+        checked: drawer.visible
+
+
+        contentItem: Text {
+            id: text_item
+            text: about_button.text
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            color: about_button.checked || about_button.down ? Qt.darker(Material.accent) : Material.accent
+            font.pointSize: 16
+            font.family: "Roboto"
+
         }
+
+        background: Rectangle {
+            color: Material.background
+        }
+
+        onClicked: {
+           drawer.force_open = true
+           drawer.open()
+       }
     }
+
 
     footer: TabBar {
         id: tab_bar
