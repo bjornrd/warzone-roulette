@@ -54,6 +54,8 @@ Item {
 
 
             roulette_behaviour.max_rolls = 1
+            x_roll_timer.interval = roulette_behaviour.roll_timer_base_interval
+            y_roll_timer.interval = roulette_behaviour.roll_timer_base_interval
             x_roll_timer.start()
         }
     }

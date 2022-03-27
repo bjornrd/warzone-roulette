@@ -29,6 +29,7 @@ Item {
                 roll_timer.stop()
 
             roulette_behaviour.max_rolls = 1
+            roll_timer.interval = roulette_behaviour.roll_timer_base_interval
             roll_timer.start()
         }
     }
