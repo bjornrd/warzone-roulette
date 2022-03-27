@@ -17,6 +17,7 @@ Item {
         id: roulette_behaviour
         property int num_x_rolls: 0
         property int num_y_rolls: 0
+        property int base_max_rolls: 11
 
         max_rolls: 11
         roll_timer_interval_incr: 20
@@ -44,6 +45,17 @@ Item {
             root.y_coordinate_value = 0
             x_roll_timer.start()
         }
+
+        onPressAndHold: {
+            if(x_roll_timer.running)
+                x_roll_timer.stop()
+            if(y_roll_timer.running)
+                y_roll_timer.stop()
+
+
+            roulette_behaviour.max_rolls = 1
+            x_roll_timer.start()
+        }
     }
 
     Timer {
@@ -67,6 +79,13 @@ Item {
         repeat: roulette_behaviour.num_y_rolls < roulette_behaviour.max_rolls
 
         onTriggered: doYRoll()
+
+        onRunningChanged: {
+            if(!running) {
+                roulette_behaviour.max_rolls = roulette_behaviour.base_max_rolls
+            }
+
+        }
     }
 
     onMap_gridChanged: {

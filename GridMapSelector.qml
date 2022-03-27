@@ -16,6 +16,7 @@ Item {
     signal useCalderaGridSignal
     signal useRebirthGridSignal
 
+    // TODO: Change this to a standard rect-based thing
     Shape {
         id: shape
 
@@ -68,6 +69,7 @@ Item {
             color: parent.checked ? Material.accent : Material.foreground
             font.pointSize: 16
             font.capitalization: Qt.platform.os === "ios" ? Font.Capitalize : Font.AllUppercase
+            font.bold: parent.checked
         }
 
         background: Rectangle {
@@ -104,6 +106,7 @@ Item {
             color: parent.checked ? Material.accent : Material.foreground
             font.pointSize: 16
             font.capitalization: Qt.platform.os === "ios" ? Font.Capitalize : Font.AllUppercase
+            font.bold: parent.checked
         }
 
         background: Rectangle {

@@ -8,6 +8,7 @@ Item {
     RouletteBehaviour {
         id: roulette_behaviour
         property int num_rolls: 0
+        property int base_max_rolls: 21
     }
 
     RollButton {
@@ -22,6 +23,14 @@ Item {
             roll_timer.interval = roulette_behaviour.roll_timer_base_interval
             roll_timer.start()
         }
+
+        onPressAndHold: {
+            if(roll_timer.running)
+                roll_timer.stop()
+
+            roulette_behaviour.max_rolls = 1
+            roll_timer.start()
+        }
     }
 
     Timer {
@@ -30,6 +39,11 @@ Item {
         repeat: roulette_behaviour.num_rolls < roulette_behaviour.max_rolls
 
         onTriggered: doRoll()
+        onRunningChanged: {
+            if(!running){
+                roulette_behaviour.max_rolls = roulette_behaviour.base_max_rolls
+            }
+        }
     }
 
     function doRoll()
