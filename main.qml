@@ -164,8 +164,8 @@ ApplicationWindow {
                         <a href=\"https://github.com/bjornrd/warzone-roulette.git\"><b>Github repository</b></a> <br>
                         <br>
                         <br>
-                        Built using Qt Creator <br>
-                        Qt " + qtversion + " <br>
+                        Developed using Qt Creator <br>
+                        And Qt " + qtversion + " <br>
                         (Clang 12.0 (Apple), 64 bit) <br>
                         From revision: <a href=\"https://code.qt.io/cgit/qt-creator/qt-creator.git/log/?id=f884ff2160ed5b3c44663d70e1c6915aff4b8ac0\"> f884ff2160 </a>
                         "
