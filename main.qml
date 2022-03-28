@@ -98,17 +98,17 @@ ApplicationWindow {
         }
 
         TabButton {
-            id: caldera_grid_menu_button
+            id: grid_menu_button
             text: "Grid"
             hoverEnabled: false
             font.capitalization: Qt.platform.os === "ios" ? Font.Capitalize : Font.AllUppercase
 
             contentItem: Text {
-                text: caldera_grid_menu_button.text
+                text: grid_menu_button.text
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignHCenter
-                font: caldera_grid_menu_button.font
-                color: caldera_grid_menu_button.checked ? Material.accent : Material.foreground
+                font: grid_menu_button.font
+                color: grid_menu_button.checked ? Material.accent : Material.foreground
             }
 
             background: Rectangle { // Ignore default ripple effect
@@ -134,8 +134,8 @@ ApplicationWindow {
             id: rebirth_roulette_view
         }
 
-        CalderaGridRouletteView {
-            id: caldera_grid_roulette_view
+        GridRouletteView {
+            id: grid_roulette_view
 
         }
     }

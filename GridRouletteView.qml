@@ -8,7 +8,7 @@ Item {
         id: map
     }
 
-    CalderaGridRouletteResultView {
+    GridRouletteResultView {
         id: roulette_result_view
         width: parent.width
         height: parent.height/2
@@ -20,7 +20,7 @@ Item {
         y_coordinate: map.grid_coordinates[roulette_controller.x_coordinate_final_value][1][roulette_controller.y_coordinate_value]
     }
 
-    CalderaGridRouletteController {
+    GridRouletteController {
         id: roulette_controller
         width: parent.width
         height: parent.height/2

@@ -9,9 +9,9 @@ resources.files =\
                 Coordinate.qml \
                 MapGrid.qml \
                 Map.qml \
-                CalderaGridRouletteResultView.qml \
-                CalderaGridRouletteView.qml \
-                CalderaGridRouletteController.qml \
+                GridRouletteResultView.qml \
+                GridRouletteView.qml \
+                GridRouletteController.qml \
                 CalderaZones.qml \
                 CalderaRouletteResultView.qml \
                 CalderaRouletteController.qml \
@@ -40,15 +40,15 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
-    CalderaGridRouletteController.qml \
-    CalderaGridRouletteResultView.qml \
-    CalderaGridRouletteView.qml \
     CalderaRouletteController.qml \
     CalderaRouletteResultView.qml \
     CalderaRouletteView.qml \
     CalderaZones.qml \
     Coordinate.qml \
     GridMapSelector.qml \
+    GridRouletteController.qml \
+    GridRouletteResultView.qml \
+    GridRouletteView.qml \
     Map.qml \
     MapGrid.qml \
     RebirthRouletteController.qml \

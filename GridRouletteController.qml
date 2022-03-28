@@ -68,11 +68,12 @@ Item {
         onTriggered: doXRoll()
         onRunningChanged: {
             if(!running){
+                root.y_coordinate_value = 0
                 root.x_coordinate_final_value = root.x_coordinate_value
                 root.y_roll_max = root.map_grid[root.x_coordinate_final_value][1].length
                 y_roll_timer.start()
             }
-        }
+        }                
     }
 
     Timer {
