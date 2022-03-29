@@ -3,8 +3,6 @@ import QtQuick 2.0
 Item {
     id: root
 
-    property alias grid_x_coordinates: grid.x_coordinates
-    property alias grid_y_coordinates: grid.y_coordinates
     property alias grid_coordinates: grid.coordinates
 
     state: "caldera"
@@ -31,6 +29,4 @@ Item {
             }
         }
     ]
-
-//    Component.onCompleted: root.grid_coordinates = grid.caldera_valid_coordinates
 }

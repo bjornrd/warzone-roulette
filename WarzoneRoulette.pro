@@ -6,7 +6,6 @@ SOURCES += \
 resources.files =\
                 qtquickcontrols2.conf \
                 main.qml \
-                Coordinate.qml \
                 MapGrid.qml \
                 Map.qml \
                 GridRouletteResultView.qml \
@@ -44,7 +43,6 @@ DISTFILES += \
     CalderaRouletteResultView.qml \
     CalderaRouletteView.qml \
     CalderaZones.qml \
-    Coordinate.qml \
     GridMapSelector.qml \
     GridRouletteController.qml \
     GridRouletteResultView.qml \

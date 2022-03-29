@@ -1,9 +1,6 @@
 import QtQuick 2.0
 
 Item {    
-    property string x_coordinates: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
-    property string y_coordinates: ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
-
     property var coordinates: []
 
 
