@@ -1,5 +1,4 @@
 import QtQuick 2.0
-import QtQuick.Shapes 1.15
 import QtQuick.Controls.Material 2.15
 
 Item {
@@ -8,114 +7,77 @@ Item {
     property int y_start: 0
     property int y_end: 0
     property int section_height: y_end - y_start
-    property int section_width: 100
+    property int section_width: 75
 
-    property alias shape_fill_color: shape_path.fillColor
-    property alias shape_stroke_color: shape_path.strokeColor
+    property alias background_color: background.color
 
     signal useCalderaGridSignal
     signal useRebirthGridSignal
 
-    // TODO: Change this to a standard rect-based thing
-    Shape {
-        id: shape
+    Rectangle {
+        id: background
 
-        property alias y_safe_region_start: tl.y
-        property alias y_safe_region_end: ml.y
-        property alias x_safe_region_start: ml.x
-        property alias x_safe_region_end: shape_path.startX
+        width: root.section_height
+        height: root.section_width
 
-        ShapePath {
-            id: shape_path
-            startX: root.width
-            startY: root.y_start
+        y: root.y_start + width
+        x: root.width - height
 
-            PathLine {
-                id: tl
-                x: root.width - root.section_width/2
-                y: root.y_start + 50
+        Button {
+            id: caldera_button
+            width: background.width/2
+            height: background.height
+            anchors.right: background.right
+            checkable: true
+            checked: true
+
+            contentItem: Text {
+                text: "Caldera"
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+                color: parent.checked ? Material.accent : Material.foreground
+                font.pointSize: 16
+                font.capitalization: Qt.platform.os === "ios" ? Font.Capitalize : Font.AllUppercase
+                font.bold: parent.checked
             }
 
-            PathLine {
-                id: ml
-                x: tl.x
-                y: tl.y + section_height
+            background: Rectangle {
+                anchors.fill: parent
+                color: background.color
             }
 
-            PathLine {
-                id: bl
-                x: ml.x + root.section_width/2
-                y: ml.y + 50
+            onClicked: {
+                root.useCalderaGridSignal()
             }
-        }
-    }
 
-
-    Button {
-        id: caldera_button
-        x: shape.x_safe_region_start
-        y: shape.y_safe_region_start + width
-        z: 40
-        width: (shape.y_safe_region_end - shape.y_safe_region_start)/2
-        height:(shape.x_safe_region_end - shape.x_safe_region_start)
-        checkable: true
-        checked: true
-
-
-        contentItem: Text {
-            text: "Caldera"
-            horizontalAlignment: Text.AlignHCenter
-            verticalAlignment: Text.AlignVCenter
-            color: parent.checked ? Material.accent : Material.foreground
-            font.pointSize: 16
-            font.capitalization: Qt.platform.os === "ios" ? Font.Capitalize : Font.AllUppercase
-            font.bold: parent.checked
         }
 
-        background: Rectangle {
-            anchors.fill: parent
-            color: root.shape_fill_color
-        }
+        Button {
+            id: rebirth_button
+            width: background.width/2
+            height: background.height
+            anchors.left: background.left
+            checkable: true
+            checked: false
 
-        onClicked: {
-            root.useCalderaGridSignal()
-        }
+            contentItem: Text {
+                text: "Rebirth"
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+                color: parent.checked ? Material.accent : Material.foreground
+                font.pointSize: 16
+                font.capitalization: Qt.platform.os === "ios" ? Font.Capitalize : Font.AllUppercase
+                font.bold: parent.checked
+            }
 
-        transform: Rotation {
-            origin.x: 0
-            origin.y: 0
-            angle: -90
-        }
-    }
+            background: Rectangle {
+                anchors.fill: parent
+                color: background.color
+            }
 
-    Button {
-        id: rebirth_button
-        x: shape.x_safe_region_start
-        y: shape.y_safe_region_start + 2*width
-        z: 40
-        width: (shape.y_safe_region_end - shape.y_safe_region_start)/2
-        height:(shape.x_safe_region_end - shape.x_safe_region_start)
-        checkable: true
-        checked: false
-
-
-        contentItem: Text {
-            text: "Rebirth"
-            horizontalAlignment: Text.AlignHCenter
-            verticalAlignment: Text.AlignVCenter
-            color: parent.checked ? Material.accent : Material.foreground
-            font.pointSize: 16
-            font.capitalization: Qt.platform.os === "ios" ? Font.Capitalize : Font.AllUppercase
-            font.bold: parent.checked
-        }
-
-        background: Rectangle {
-            anchors.fill: parent
-            color: root.shape_fill_color
-        }
-
-        onClicked: {
-            root.useRebirthGridSignal()
+            onClicked: {
+                root.useRebirthGridSignal()
+            }
         }
 
         transform: Rotation {
