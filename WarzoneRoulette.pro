@@ -58,3 +58,8 @@ DISTFILES += \
     RollButton.qml \
     RouletteBehaviour.qml \
     qtquickcontrols2.conf
+
+
+ios {
+    QMAKE_INFO_PLIST = ios/Info.plist
+}

@@ -154,7 +154,10 @@ ApplicationWindow {
             color: Qt.lighter(Material.primary, 3)
 
             Text {
-                text: " <font color=\'#e3bf15\'><b>Written by:</b></font> <br>
+                text: " <font color=\'#e3bf15\'><b> Warzone Roulette </b></font> <br>
+                        Version: " + appversion + " <br>
+                        <br>
+                        <font color=\'#e3bf15\'><b>Written by:</b></font> <br>
                         Yup <br>
                         <br>
                         <font color=\'#e3bf15\'><b>For:</b></font> <br>
@@ -168,7 +171,13 @@ ApplicationWindow {
                         And Qt " + qtversion + " <br>
                         (Clang 12.0 (Apple), 64 bit) <br>
                         From revision: <a href=\"https://code.qt.io/cgit/qt-creator/qt-creator.git/log/?id=f884ff2160ed5b3c44663d70e1c6915aff4b8ac0\"> f884ff2160 </a>
-                        "
+                        <br>
+                        <br>
+                        <br>
+                        Contributions are most welcome.<br>
+                        May there be many dubs<br>
+                        coming your way :D
+                      "
                 font.pointSize: 16
                 anchors.fill: parent
                 anchors.leftMargin: 20
