@@ -23,5 +23,7 @@ Item {
 
         anchors.top: roulette_result_view.bottom
         anchors.left: parent.left
+
+        num_zones: zones.zones.length
     }
 }

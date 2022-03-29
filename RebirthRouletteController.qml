@@ -5,6 +5,7 @@ import QtQuick.Controls.Material 2.15
 Item {
     id: root
     property int zone_value: 0
+    property int num_zones: 0
 
     RouletteBehaviour {
         id: roulette_behaviour
@@ -51,11 +52,11 @@ Item {
     function doRoll()
     {
         // Force new value for each roll
-        var new_zone_value = Math.floor(Math.random()*10)
+        var new_zone_value = Math.floor(Math.random()*root.num_zones)
         if (new_zone_value === root.zone_value)
         {
             while(new_zone_value === root.zone_value){
-                new_zone_value = Math.floor(Math.random()*10)
+                new_zone_value = Math.floor(Math.random()*root.num_zones)
             }
         }
         root.zone_value = new_zone_value
